@@ -1,1 +1,1 @@
-# bollinger-strategy
+# bollinger

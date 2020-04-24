@@ -7,5 +7,5 @@
   "leverage": "Leverage of the order",
   "size": "Order size. Must be a positive number",
   "resolution": "kline resolution,count by minute,such as 60,it means 60min(1h) kline",
-  "valve": "valve",
+  "valve": "valve"
 }

@@ -1,60 +1,62 @@
-# 布林强盗突破策略
+# Bollinger_strategy
 
-## 策略说明
+## Strategy description
 
-MB中轨：10日的简单移动平均
+MB middle line: simple moving average of 10 days
 
-UP上轨：中轨 + 1.5倍30日标准差
+UP line: middle line + 1.5x(standard deviation of 30 days)
 
-DN下轨：中轨 - 1.5倍30日标准差
+DN line: middle line - 1.5x(standard deviation of 30 days) 
 
-如果收盘价上穿布林上轨，则买入，价格丢破中轨平仓
+If the close position breaks up the UP line, open long position, and if price drops down below middle line, close the postion.
 
-如果收盘价下穿布林下轨，则卖出，价格突破中轨平仓
+If the close position breaks down the DN line, open short position, and if price breaks up middle line, close the postion.  
 
-**请注意，该策略是在收盘时对走势进行简单预测，根据预测结果进行开仓及平仓操作，预测不提供准确性保证。**
+**Please note that this strategy is to simply predict the trend from the close price, and to open and close positions based on the predicted results. The prediction does not provide accuracy guarantee.**
 
-**这里仅提供一个简单且不完备的交易策略，所以在使用时请注意规避风险，当然，我们不希望你出现较多的亏损，所以在未经自己亲手测试之前，请千万不要直接在实际环境使用，我们也不想你成为一个慈善家！！！**
+**Moreover, KuCoin provides the transaction data of level 3, great matching engine, and the commission discount specially offers to the API customers, which could greatly reduce the disadvantages of the trading operations. At the same time, we offer the sandbox environment as the data testing support to avoid the risks.**
 
-**不过，如果你想在实际环境中利用策略获得稳定的盈利，我们希望你能够在sandbox环境配合其他参数或是策略进行测试调整，以使你能够达到目的，我们也非常期待你能分享你的测试数据以及独到的见解。**
+**Only a simple and incomplete trading strategy is provided here, so please pay attention to avoiding risks when using it. Of course, we do not want you to suffer more losses, so please do not directly run it in the actual environment before you have tested it yourself. We do not want you to become a philanthropist! ! !**
 
-**当然，如果这个过程中，你遇到任何问题需要帮助亦或是有赚钱的策略想要分享，请在ISSUE中反映，我们会努力及时响应。**
+**If you want to use the strategy in the actual environment to earn stable profits, we hope that you can make test adjustments in the sandbox environment with other parameters or strategies to enable you to achieve your goals. We also look forward to sharing your test data and Insights.**
+
+**Surely, if you encounter any problems in this process, or you have a profitable strategy to share, please reflect in ISSUE, we will try to respond in a timely manner.**
 
 
 
-## 如何使用
+## How to use
 
-* 克隆该策略项目至本地后，安装依赖：
+* After clone this project to your local, install the dependency: 
 
   ```shell script
   pip install python-kumex
   ```
 
-* 复制config.json.example，并重命名为config.json，然后完善相关的配置信息
+* Paste config.json.example,  rename as config.json, then add the relevant configuration information:  
 
   ```json
   {  
     "api_key": "api key",
     "api_secret": "api secret",
     "api_passphrase": "api pass phrase",
-    // 是否是沙盒环境
+    // if sandbox
     "is_sandbox": true,
-    // 合约名称，比如：XBTUSDTM 
+    // contract name, e.g.: XBTUSDM 
     "symbol": "contract name",
-    // 杠杆倍数，比如：5
+    // leverage, e.g.:5
     "leverage": "Leverage of the order",
-    // 开仓数量，比如：1
+    // order size, e.g.: 1
     "size": "Order size. Must be a positive number",
-    // K线图基准，单位是分钟，比如：60，代表60min，即1h为基准的K线图
+    // time frame of Kline, mesure time by minute, e.g.:60(60min)
     "resolution": "kline resolution,count by minute,such as 60,it means 60min(1h) kline",
-    // 阈值
+    // threshold value
     "valve": "valve",
   }
   ```
 
   
 
-* 让你的策略运行起来：
+* Run your strategy
 
   ```shell
   ./bollinger.py

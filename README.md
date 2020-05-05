@@ -34,7 +34,7 @@ If the close position breaks down the DN line, open short position, and if price
 
 * Paste config.json.example,  rename as config.json, then add the relevant configuration information:  
 
-  ```json
+  ```
   {  
     "api_key": "api key",
     "api_secret": "api secret",

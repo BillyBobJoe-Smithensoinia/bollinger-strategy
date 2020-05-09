@@ -72,7 +72,7 @@ DN下轨：中轨 - 1.5倍30日标准差
 
   ![pip_install](./img/pip_install.gif)
   
-* 在你需要跑策略的位置新建文件夹（例如桌面），**右键**点击新建的文件夹选择**“新建位于文件夹位置的终端窗口”**（**windows系统**：在右键点击文件夹点击**git Bash here**），在弹出的窗口中输入以下命令，克隆项目至本地，完成后本地会新增文件夹**bollinger-strategy**：
+* 在你需要跑策略的位置新建文件夹（例如桌面），**右键**点击新建的文件夹选择“**新建位于文件夹位置的终端窗口**”（**windows**系统：在右键点击文件夹点击**git Bash here**），在弹出的窗口中输入以下命令，克隆项目至本地，完成后本地会新增文件夹**bollinger-strategy**：
   
   ```shell
   git clone https://github.com/Kucoin-academy/bollinger-strategy.git

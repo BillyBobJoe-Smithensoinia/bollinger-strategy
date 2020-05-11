@@ -61,8 +61,8 @@ class Boll(object):
         self.symbol = config['symbol']
         self.resolution = int(config['resolution'])
         self.valve = float(config['valve'])
-        self.leverage = config['leverage']
-        self.size = config['size']
+        self.leverage = float(config['leverage'])
+        self.size = int(config['size'])
         self.trade = Trade(self.api_key, self.api_secret, self.api_passphrase, is_sandbox=self.sandbox)
 
 
@@ -84,7 +84,7 @@ if __name__ == '__main__':
         print('up =', up)
         dn = mb - 1.5 * std
         print('dn =', dn)
-        now_price = float(data['c'][-1])
+        now_price = int(data['c'][-1])
         print('closed price =', now_price)
 
         order_flag = 0
